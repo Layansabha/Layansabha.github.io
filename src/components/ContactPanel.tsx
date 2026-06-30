@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { publicAsset } from "../utils/publicAsset";
 import redbullCan from "../assets/redbull.png";
 
 const channels = ["DevOps", "Security", "Network"];
@@ -109,6 +110,14 @@ export default function ContactPanel() {
                   </a>
                 ))}
               </div>
+              <a
+                href={publicAsset("Layan-Sabha-CV.pdf")}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-flex items-center justify-center rounded-xl border border-white/10 bg-[var(--red)] px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:bg-[#c9373d]"
+              >
+                Download CV
+              </a>
             </div>
           </div>
         </motion.div>

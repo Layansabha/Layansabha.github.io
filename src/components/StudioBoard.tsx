@@ -27,8 +27,7 @@ export default function StudioBoard() {
       return "The machine is fully fueled and ready for the next build.";
     if (cans >= 350)
       return "Momentum is building. The system is starting to feel reliable.";
-    if (cans >= 200)
-      return "Good progress. The setup is holding together nicely.";
+    if (cans >= 200) return "The pipeline is shaping up and responding well.";
     return "Feed the machine and let the workflow take shape.";
   }, [cans, complete]);
 
@@ -57,7 +56,7 @@ export default function StudioBoard() {
             Interactive Lab
           </p>
           <h2 className="mt-3 max-w-4xl text-4xl font-black leading-[0.98] text-[#fff8ee] sm:text-6xl">
-            Thoughtful systems. Clear personality.
+            Systems in motion.
           </h2>
         </motion.div>
 

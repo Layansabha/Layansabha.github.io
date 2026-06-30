@@ -1,7 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-type DetailKey = "amanak-case-study" | "amanak-architecture" | "dom-methodology";
+type DetailKey =
+  | "amanak-case-study"
+  | "amanak-architecture"
+  | "dom-methodology";
 
 type ProjectAction = {
   label: string;
@@ -25,15 +28,22 @@ const projects: FeaturedProject[] = [
   {
     title: "Amanak",
     category: "Full-stack mobile security",
-    description: "Android frontend + Spring Boot backend + MySQL + dataset logic.",
+    description:
+      "Android frontend + Spring Boot backend + MySQL + dataset logic.",
     status: "90% Complete",
     stack: ["Android", "Java", "Spring Boot", "MySQL", "REST API", "Figma"],
     surface: "border-black/10 bg-[#fff7ea] text-[#11131a]",
     muted: "text-black/55",
     actions: [
       { label: "View Case Study", detail: "amanak-case-study", primary: true },
-      { label: "GitHub Repo", href: "https://github.com/Layansabha/amanak-fullstack" },
-      { label: "Live Demo / API", href: "https://layansabha.github.io/amanak-fullstack/" },
+      {
+        label: "GitHub Repo",
+        href: "https://github.com/Layansabha/amanak-fullstack",
+      },
+      {
+        label: "Live Demo / API",
+        href: "https://layansabha.github.io/amanak-fullstack/",
+      },
       { label: "Architecture", detail: "amanak-architecture" },
     ],
   },
@@ -45,7 +55,11 @@ const projects: FeaturedProject[] = [
     surface: "border-[#9fb7d3]/35 bg-[#dfe8f2] text-[#11131a]",
     muted: "text-black/55",
     actions: [
-      { label: "GitHub", href: "https://github.com/Layansabha/Dom-xss-ML", primary: true },
+      {
+        label: "GitHub",
+        href: "https://github.com/Layansabha/Dom-xss-ML",
+        primary: true,
+      },
       {
         label: "Presentation",
         href: "https://1drv.ms/p/c/96dce14123ced02e/IQBX9nfeSpMaSLrUsLL3BSQtAUqRZswKKZp3o1fUSYqLJfI?e=b7Vgid",
@@ -56,7 +70,8 @@ const projects: FeaturedProject[] = [
   {
     title: "DevOps / Deployment Portfolio",
     category: "Technical proof",
-    description: "This portfolio is deployed through GitHub Actions CI/CD to GitHub Pages.",
+    description:
+      "This portfolio is deployed through GitHub Actions CI/CD to GitHub Pages.",
     stack: ["GitHub Actions", "CI/CD", "Vite", "GitHub Pages"],
     surface: "border-[#73e0c1]/20 bg-[#14231f] text-[#fff8ee]",
     muted: "text-white/58",
@@ -182,7 +197,7 @@ export default function FeaturedProjects() {
             </h2>
           </div>
           <p className="max-w-md text-sm leading-7 text-black/55">
-            Security, software, and deployment work with inspectable technical proof.
+            Projects with clear technical evidence and measurable outcomes.
           </p>
         </motion.div>
 
@@ -198,7 +213,9 @@ export default function FeaturedProjects() {
               className={`flex min-h-[390px] flex-col rounded-lg border p-5 shadow-[0_20px_70px_rgba(17,19,26,0.1)] ${project.surface}`}
             >
               <div className="flex items-start justify-between gap-3">
-                <p className={`font-mono text-[10px] font-black uppercase tracking-[0.2em] ${project.muted}`}>
+                <p
+                  className={`font-mono text-[10px] font-black uppercase tracking-[0.2em] ${project.muted}`}
+                >
                   {project.category}
                 </p>
                 {project.status ? (
@@ -208,8 +225,12 @@ export default function FeaturedProjects() {
                 ) : null}
               </div>
 
-              <h3 className="mt-5 text-3xl font-black leading-tight">{project.title}</h3>
-              <p className={`mt-3 text-sm leading-7 ${project.muted}`}>{project.description}</p>
+              <h3 className="mt-5 text-3xl font-black leading-tight">
+                {project.title}
+              </h3>
+              <p className={`mt-3 text-sm leading-7 ${project.muted}`}>
+                {project.description}
+              </p>
 
               <div className="mt-5 flex flex-wrap gap-2">
                 {project.stack.map((item) => (
@@ -242,7 +263,9 @@ export default function FeaturedProjects() {
                     <button
                       key={action.label}
                       type="button"
-                      onClick={() => action.detail && setActiveDetail(action.detail)}
+                      onClick={() =>
+                        action.detail && setActiveDetail(action.detail)
+                      }
                       className={className}
                     >
                       {action.label}
@@ -280,7 +303,10 @@ export default function FeaturedProjects() {
                   <p className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-[#73e0c1]">
                     {detail.eyebrow}
                   </p>
-                  <h3 id="featured-detail-title" className="mt-2 text-2xl font-black leading-tight sm:text-3xl">
+                  <h3
+                    id="featured-detail-title"
+                    className="mt-2 text-2xl font-black leading-tight sm:text-3xl"
+                  >
                     {detail.title}
                   </h3>
                 </div>
@@ -295,12 +321,19 @@ export default function FeaturedProjects() {
               </div>
 
               <div className="p-5 sm:p-7">
-                <p className="max-w-2xl text-sm leading-7 text-black/65">{detail.intro}</p>
+                <p className="max-w-2xl text-sm leading-7 text-black/65">
+                  {detail.intro}
+                </p>
                 <div className="mt-6 divide-y divide-black/10 border-y border-black/10">
                   {detail.sections.map((section) => (
-                    <div key={section.title} className="grid gap-2 py-5 sm:grid-cols-[150px_1fr] sm:gap-5">
+                    <div
+                      key={section.title}
+                      className="grid gap-2 py-5 sm:grid-cols-[150px_1fr] sm:gap-5"
+                    >
                       <h4 className="text-sm font-black">{section.title}</h4>
-                      <p className="text-sm leading-7 text-black/62">{section.body}</p>
+                      <p className="text-sm leading-7 text-black/62">
+                        {section.body}
+                      </p>
                     </div>
                   ))}
                 </div>

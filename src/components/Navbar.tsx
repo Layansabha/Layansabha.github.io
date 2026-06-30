@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { publicAsset } from "../utils/publicAsset";
 import logo from "../assets/logoo.png";
 
 const links = [
@@ -48,12 +49,22 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="#contact-info"
-          className="rounded-xl border border-[#e8d7c5]/16 bg-[#e8d7c5] px-4 py-2.5 text-xs font-black uppercase tracking-[0.12em] text-[var(--navy)] transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#e8d7c5]/30"
-        >
-          Connect
-        </a>
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href={publicAsset("Layan-Sabha-CV.pdf")}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-xl border border-white/10 bg-white/10 px-4 py-2.5 text-xs font-black uppercase tracking-[0.12em] text-white transition hover:bg-white/20"
+          >
+            Download CV
+          </a>
+          <a
+            href="#contact-info"
+            className="rounded-xl border border-[#e8d7c5]/16 bg-[#e8d7c5] px-4 py-2.5 text-xs font-black uppercase tracking-[0.12em] text-[var(--navy)] transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#e8d7c5]/30"
+          >
+            Connect
+          </a>
+        </div>
       </nav>
     </motion.header>
   );

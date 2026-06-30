@@ -87,6 +87,23 @@ export default function Hero() {
             </motion.p>
           </div>
 
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href={publicAsset("Layan-Sabha-CV.pdf")}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-2xl border border-white/10 bg-[var(--red)] px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:bg-[#c9373d]"
+            >
+              Download CV
+            </a>
+            <a
+              href="#contact"
+              className="rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-white/85 transition hover:bg-white/[0.12]"
+            >
+              Contact
+            </a>
+          </div>
+
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
             {panels.map(([title, text]) => (
               <a

@@ -41,7 +41,10 @@ const focusAreas = [
 
 export default function TechnicalFocus() {
   return (
-    <section id="technical-focus" className="scroll-mt-24 bg-[#dfe8f2] px-4 py-14 text-[#11131a] sm:px-6 lg:px-10">
+    <section
+      id="technical-focus"
+      className="scroll-mt-24 bg-[#dfe8f2] px-4 py-14 text-[#11131a] sm:px-6 lg:px-10"
+    >
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
@@ -51,14 +54,14 @@ export default function TechnicalFocus() {
         >
           <div>
             <p className="text-xs font-black uppercase tracking-[0.28em] text-[#e2484d]">
-              Hybrid engineering profile
+              Practical engineering profile
             </p>
             <h2 className="mt-3 text-4xl font-black leading-none sm:text-5xl">
               Technical Focus
             </h2>
           </div>
           <p className="max-w-lg text-sm leading-7 text-black/58">
-            Infrastructure delivery, network fundamentals, and security thinking in one practical toolkit.
+            Infrastructure, network, and security skills delivered with clarity.
           </p>
         </motion.div>
 
@@ -72,14 +75,21 @@ export default function TechnicalFocus() {
               transition={{ delay: index * 0.07 }}
               className={`py-7 md:px-7 ${index < focusAreas.length - 1 ? "border-b border-black/12 md:border-b-0 md:border-r" : ""}`}
             >
-              <p className={`font-mono text-xs font-black tracking-[0.18em] ${area.accent}`}>
+              <p
+                className={`font-mono text-xs font-black tracking-[0.18em] ${area.accent}`}
+              >
                 {area.number}
               </p>
               <h3 className="mt-3 text-2xl font-black">{area.title}</h3>
               <ul className="mt-5 space-y-3">
                 {area.skills.map((skill) => (
-                  <li key={skill} className="flex items-center gap-3 text-sm font-bold text-black/68">
-                    <span className={`h-1.5 w-1.5 shrink-0 rounded-full bg-current ${area.accent}`} />
+                  <li
+                    key={skill}
+                    className="flex items-center gap-3 text-sm font-bold text-black/68"
+                  >
+                    <span
+                      className={`h-1.5 w-1.5 shrink-0 rounded-full bg-current ${area.accent}`}
+                    />
                     {skill}
                   </li>
                 ))}
