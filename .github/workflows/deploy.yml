@@ -35,7 +35,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --base=/
+
+      - name: Add nojekyll
+        run: touch dist/.nojekyll
 
       - name: Add 404 fallback
         run: cp dist/index.html dist/404.html
