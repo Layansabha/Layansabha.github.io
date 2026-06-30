@@ -17,8 +17,7 @@ export type GameMilestone = {
   description: string;
   skills: string[];
   status?: string;
-  demoVideo?: string;
-  demoNote?: string;
+  demoUrl?: string;
   link?: string;
   presentation?: string;
   evidence?: GameMilestoneEvidence[];
@@ -134,9 +133,7 @@ export const gameMilestones: GameMilestone[] = [
       "Figma",
     ],
     status: "90% Complete",
-    demoVideo: "/assets/game/certs/amanak.mp4",
-    demoNote:
-      "Amanak is designed to integrate with official government datasets. For demonstration and testing, it currently uses a realistic mock government dataset.",
+    demoUrl: "https://layansabha.github.io/amanak-fullstack/",
     link: "https://github.com/Layansabha/amanak-fullstack",
   },
   {

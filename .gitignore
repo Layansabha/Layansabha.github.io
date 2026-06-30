@@ -1,0 +1,19 @@
+
+# Build output
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Large demo videos
+public/assets/game/certs/*.mp4
+dist/assets/game/certs/*.mp4
+
+# Logs
+*.log
