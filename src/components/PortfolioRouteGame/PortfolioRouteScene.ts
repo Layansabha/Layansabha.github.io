@@ -34,6 +34,8 @@ const PLAYER_DISPLAY_HEIGHT = 108;
 const PLAYER_START_X = 120;
 const PLAYER_START_Y = FLOOR_Y - PLAYER_DISPLAY_HEIGHT / 2 - 10;
 
+const GAME_ASSET_BASE = `${import.meta.env.BASE_URL}assets/game`;
+
 export default class PortfolioRouteScene extends Phaser.Scene {
   private player!: Phaser.Physics.Arcade.Sprite;
   private controls!: Controls;
@@ -65,47 +67,46 @@ export default class PortfolioRouteScene extends Phaser.Scene {
     this.hintText.setVisible(true);
   }
 
-
   preload() {
-    this.load.image("worldBg", "/assets/game/world-bg.png");
+    this.load.image("worldBg", `${GAME_ASSET_BASE}/world-bg.png`);
 
     this.load.spritesheet(
       "layan",
-      "/assets/game/player/layan-spritesheet.png",
+      `${GAME_ASSET_BASE}/player/layan-spritesheet.png`,
       {
         frameWidth: 160,
         frameHeight: 220,
       },
     );
 
-    this.load.image("grassBlock", "/assets/game/tiles/grass-block.png");
-    this.load.image("dirtBlock", "/assets/game/tiles/dirt-block.png");
-    this.load.image("platformLong", "/assets/game/tiles/platform-long.png");
-    this.load.image("platformMid", "/assets/game/tiles/platform-mid.png");
-    this.load.image("platformSmall", "/assets/game/tiles/platform-small.png");
+    this.load.image("grassBlock", `${GAME_ASSET_BASE}/tiles/grass-block.png`);
+    this.load.image("dirtBlock", `${GAME_ASSET_BASE}/tiles/dirt-block.png`);
+    this.load.image("platformLong", `${GAME_ASSET_BASE}/tiles/platform-long.png`);
+    this.load.image("platformMid", `${GAME_ASSET_BASE}/tiles/platform-mid.png`);
+    this.load.image("platformSmall", `${GAME_ASSET_BASE}/tiles/platform-small.png`);
 
-    this.load.image("signpost", "/assets/game/props/signpost.png");
-    this.load.image("flag", "/assets/game/props/flag.png");
-    this.load.image("coinBlock", "/assets/game/props/coin-block.png");
-    this.load.image("bridge", "/assets/game/props/bridge.png");
+    this.load.image("signpost", `${GAME_ASSET_BASE}/props/signpost.png`);
+    this.load.image("flag", `${GAME_ASSET_BASE}/props/flag.png`);
+    this.load.image("coinBlock", `${GAME_ASSET_BASE}/props/coin-block.png`);
+    this.load.image("bridge", `${GAME_ASSET_BASE}/props/bridge.png`);
 
-    this.load.image("treeOak", "/assets/game/props/tree-oak.png");
-    this.load.image("treePine", "/assets/game/props/tree-pine.png");
-    this.load.image("bushBig", "/assets/game/props/bush-big.png");
-    this.load.image("bushSmall", "/assets/game/props/bush-small.png");
+    this.load.image("treeOak", `${GAME_ASSET_BASE}/props/tree-oak.png`);
+    this.load.image("treePine", `${GAME_ASSET_BASE}/props/tree-pine.png`);
+    this.load.image("bushBig", `${GAME_ASSET_BASE}/props/bush-big.png`);
+    this.load.image("bushSmall", `${GAME_ASSET_BASE}/props/bush-small.png`);
 
-    this.load.image("flowerWhite", "/assets/game/props/flower-white.png");
-    this.load.image("flowerPurple", "/assets/game/props/flower-purple.png");
-    this.load.image("flowerPink", "/assets/game/props/flower-pink.png");
+    this.load.image("flowerWhite", `${GAME_ASSET_BASE}/props/flower-white.png`);
+    this.load.image("flowerPurple", `${GAME_ASSET_BASE}/props/flower-purple.png`);
+    this.load.image("flowerPink", `${GAME_ASSET_BASE}/props/flower-pink.png`);
 
-    this.load.image("mushroomRed", "/assets/game/props/mushroom-red.png");
-    this.load.image("mushroomPurple", "/assets/game/props/mushroom-purple.png");
+    this.load.image("mushroomRed", `${GAME_ASSET_BASE}/props/mushroom-red.png`);
+    this.load.image("mushroomPurple", `${GAME_ASSET_BASE}/props/mushroom-purple.png`);
 
-    this.load.image("rockBig", "/assets/game/props/rock-big.png");
-    this.load.image("rockSmall", "/assets/game/props/rock-small.png");
+    this.load.image("rockBig", `${GAME_ASSET_BASE}/props/rock-big.png`);
+    this.load.image("rockSmall", `${GAME_ASSET_BASE}/props/rock-small.png`);
 
-    this.load.image("cloudBig", "/assets/game/props/cloud-big.png");
-    this.load.image("cloudSmall", "/assets/game/props/cloud-small.png");
+    this.load.image("cloudBig", `${GAME_ASSET_BASE}/props/cloud-big.png`);
+    this.load.image("cloudSmall", `${GAME_ASSET_BASE}/props/cloud-small.png`);
   }
 
   create() {
@@ -136,6 +137,7 @@ export default class PortfolioRouteScene extends Phaser.Scene {
       this.player.play("layan-idle", true);
       return;
     }
+
     this.updateMovement();
     this.updateNearbyMilestone();
     this.updateProgress();

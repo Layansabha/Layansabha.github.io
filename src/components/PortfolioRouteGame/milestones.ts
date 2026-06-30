@@ -23,6 +23,9 @@ export type GameMilestone = {
   evidence?: GameMilestoneEvidence[];
 };
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 export const gameMilestones: GameMilestone[] = [
   {
     id: 1,
@@ -60,22 +63,22 @@ export const gameMilestones: GameMilestone[] = [
       {
         title: "Introduction to Networks",
         detail: "Cisco Networking Academy | Completed 26 Nov 2022",
-        href: "/assets/game/certs/1.pdf",
+        href: publicAsset("assets/game/certs/1.pdf"),
       },
       {
         title: "Enterprise Networking, Security & Automation",
         detail: "Cisco Networking Academy | Completed 12 Dec 2022",
-        href: "/assets/game/certs/2.pdf",
+        href: publicAsset("assets/game/certs/2.pdf"),
       },
       {
         title: "Switching, Routing & Wireless Essentials",
         detail: "Cisco Networking Academy | Completed 12 Dec 2022",
-        href: "/assets/game/certs/3.pdf",
+        href: publicAsset("assets/game/certs/3.pdf"),
       },
       {
         title: "Introduction to Networks",
         detail: "Cisco Networking Academy | Training certificate record",
-        href: "/assets/game/certs/4.pdf",
+        href: publicAsset("assets/game/certs/4.pdf"),
       },
     ],
   },
@@ -153,7 +156,7 @@ export const gameMilestones: GameMilestone[] = [
       {
         title: "DevOps Internship Training",
         detail: "Official internship training certificate",
-        href: "/assets/game/certs/ليان صبحا-شهادة تدريب.pdf",
+        href: publicAsset("assets/game/certs/ليان صبحا-شهادة تدريب.pdf"),
       },
     ],
   },
@@ -174,7 +177,9 @@ export const gameMilestones: GameMilestone[] = [
       {
         title: "Cisco Certified Network Associate",
         detail: "Issued 30 Aug 2025 | Valid through 30 Aug 2028",
-        href: "/assets/game/certs/Cisco Certified Network Associate certificate.pdf",
+        href: publicAsset(
+          "assets/game/certs/Cisco Certified Network Associate certificate.pdf",
+        ),
       },
     ],
   },
