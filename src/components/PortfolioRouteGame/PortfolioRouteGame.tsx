@@ -164,7 +164,7 @@ export default function PortfolioRouteGame() {
 
             <div
               ref={gameRef}
-              className="h-[min(72vh,640px)] w-full overflow-hidden rounded-md bg-[#83c9ff]"
+              className="aspect-video w-full overflow-hidden rounded-md bg-[#0d2346]"
             />
           </div>
 
