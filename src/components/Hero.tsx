@@ -3,18 +3,21 @@ import { motion } from "framer-motion";
 import { publicAsset } from "../utils/publicAsset";
 
 const commands = [
-  "scan --identity layan",
-  "deploy --secure --fast",
-  "audit --network --baseline",
+  "deploy --pipeline jenkins",
+  "operate --linux --reliable",
+  "troubleshoot --apps --infra",
   "open --projects",
 ];
 
 const panels = [
-  ["Security", "Threat modeling, IAM, secrets, and practical controls."],
-  ["DevOps", "CI/CD, Linux, Docker, automation, and reliable delivery."],
+  ["DevOps", "CI/CD pipelines, containers, Kubernetes, and delivery automation."],
   [
-    "Network",
-    "Routing, switching, troubleshooting, and resilient connectivity.",
+    "Application Support",
+    "Deployment, logs, APIs, environment configuration, and end-to-end troubleshooting.",
+  ],
+  [
+    "IT Operations",
+    "Linux, NGINX, Apache Tomcat, Oracle 19c, and infrastructure support.",
   ],
 ];
 
@@ -51,14 +54,15 @@ export default function Hero() {
           </div>
 
           <p className="text-xs font-black uppercase tracking-[0.32em] text-[var(--red)]">
-            DevOps / Security / Network
+            Junior DevOps / Application Support / IT Operations
           </p>
           <h1 className="mt-4 max-w-3xl text-4xl font-black leading-[1.02] tracking-normal text-[#fff8ee] sm:text-5xl lg:text-6xl">
-            Layan builds systems that hold under pressure.
+            Layan builds, deploys, and troubleshoots reliable systems.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-8 text-white/66">
-            She designs secure systems, streamlines delivery, and brings clarity
-            to the details that matter most.
+            Cybersecurity graduate with hands-on experience in CI/CD, Linux,
+            containers, application deployment, database operations, security
+            testing, and production support.
           </p>
 
           <div className="mt-8 rounded-2xl border border-white/10 bg-[#070a10]/70 p-4 font-mono">
@@ -109,10 +113,10 @@ export default function Hero() {
               <a
                 key={title}
                 href={
-                  title === "Security"
-                    ? "#about"
-                    : title === "DevOps"
-                      ? "#skills"
+                  title === "DevOps"
+                    ? "#technical-focus"
+                    : title === "Application Support"
+                      ? "#about"
                       : "#route-game"
                 }
                 className="rounded-2xl border border-white/10 bg-white/[0.045] p-4 transition hover:-translate-y-1 hover:bg-white/[0.08]"
