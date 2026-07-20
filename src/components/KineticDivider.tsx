@@ -1,24 +1,15 @@
 export default function KineticDivider() {
   return (
-    <div className="relative overflow-hidden border-y border-white/10 bg-[var(--navy)] py-3 text-[var(--paper-soft)]">
-      <div className="marquee-track flex w-max gap-8 whitespace-nowrap font-mono text-[11px] font-black uppercase tracking-[0.24em] opacity-58">
-        {Array.from({ length: 2 }, (_, group) => (
-          <div key={group} className="flex gap-8">
-            {[
-              "deploy",
-              "automate",
-              "support",
-              "monitor",
-              "troubleshoot",
-              "secure",
-            ].map((item) => (
-              <span key={`${group}-${item}`} className="flex items-center gap-8">
-                {item}
-                <span className="h-1 w-1 rounded-full bg-[var(--red)]" />
-              </span>
-            ))}
-          </div>
-        ))}
+    <div className="border-y border-black/10 bg-[#ebe7de] px-4 py-4 text-[var(--ink)] sm:px-6 lg:px-10">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-8 gap-y-2 font-mono text-[11px] font-semibold text-black/55">
+        {["deploy", "automate", "support", "monitor", "troubleshoot", "secure"].map(
+          (item) => (
+            <span key={item} className="flex items-center gap-3">
+              <span className="h-1 w-1 bg-[var(--red)]" />
+              {item}
+            </span>
+          ),
+        )}
       </div>
     </div>
   );

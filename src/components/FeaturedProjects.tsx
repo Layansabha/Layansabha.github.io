@@ -28,19 +28,20 @@ export default function FeaturedProjects() {
   const detail = activeDetail ? detailContent[activeDetail] : null;
 
   return (
-    <section id="projects" className="bg-[#f1ece4] px-4 py-14 sm:px-6 lg:px-10">
+    <section id="projects" className="scroll-mt-20 bg-[var(--paper)] px-4 py-20 sm:px-6 lg:px-10 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          className="mb-7 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
+          transition={{ duration: 0.4 }}
+          className="mb-10 grid gap-4 border-b border-black/12 pb-7 md:grid-cols-[1fr_auto] md:items-end"
         >
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.28em] text-[#e2484d]">
+            <p className="text-xs font-semibold text-[var(--red)]">
               Selected work
             </p>
-            <h2 className="mt-3 text-4xl font-black leading-none text-[#11131a] sm:text-5xl">
+            <h2 className="mt-3 text-4xl font-bold leading-none tracking-[-0.035em] text-[var(--ink)] sm:text-5xl lg:text-6xl">
               Featured Projects
             </h2>
           </div>
@@ -52,47 +53,47 @@ export default function FeaturedProjects() {
               key={project.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -2 }}
               viewport={{ once: true, amount: 0.25 }}
-              transition={{ delay: index * 0.06 }}
-              className={`flex min-h-[390px] flex-col rounded-lg border p-5 shadow-[0_20px_70px_rgba(17,19,26,0.1)] ${project.surface}`}
+              transition={{ duration: 0.35, delay: index * 0.05 }}
+              className="flex min-h-[430px] flex-col rounded-[10px] border border-[#d8d4cc] bg-[#fbfaf6] p-6 text-[var(--ink)] shadow-[0_8px_24px_rgba(24,24,24,0.035)]"
             >
               <div className="flex items-start justify-between gap-3">
                 <p
-                  className={`font-mono text-[10px] font-black uppercase tracking-[0.2em] ${project.muted}`}
+                  className="max-w-[80%] text-xs font-semibold leading-5 text-[var(--red)]"
                 >
                   {project.category}
                 </p>
                 {project.status ? (
-                  <span className="shrink-0 rounded-full border border-[#e2484d]/20 bg-[#e2484d]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.12em] text-[#b72f36]">
+                  <span className="shrink-0 rounded border border-[var(--red)]/25 bg-[var(--red)]/[0.06] px-2.5 py-1 text-[9px] font-semibold text-[var(--red)]">
                     {project.status}
                   </span>
                 ) : null}
               </div>
 
-              <h3 className="mt-5 text-3xl font-black leading-tight">
+              <h3 className="mt-7 text-3xl font-bold leading-[1.12] tracking-[-0.025em]">
                 {project.title}
               </h3>
-              <p className={`mt-3 text-sm leading-7 ${project.muted}`}>
+              <p className="mt-4 text-sm leading-7 text-[var(--muted)]">
                 {project.description}
               </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-1.5">
                 {project.stack.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-current/10 bg-white/10 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.08em]"
+                    className="rounded-[5px] border border-black/10 bg-[#f3f0e9] px-2.5 py-1.5 text-[10px] font-semibold text-black/58"
                   >
                     {item}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-auto flex flex-wrap gap-2 pt-7">
+              <div className="mt-auto flex flex-wrap gap-2 border-t border-black/10 pt-6">
                 {project.actions.map((action) => {
                   const className = action.primary
-                    ? "rounded-md bg-[#e2484d] px-3.5 py-2.5 text-[10px] font-black uppercase tracking-[0.1em] text-white transition hover:-translate-y-0.5 hover:bg-[#c9373d] focus:outline-none focus:ring-2 focus:ring-[#e2484d]/35"
-                    : "rounded-md border border-current/15 bg-white/10 px-3.5 py-2.5 text-[10px] font-black uppercase tracking-[0.1em] transition hover:-translate-y-0.5 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-current/20";
+                    ? "rounded-md border border-[var(--red)] bg-[var(--red)] px-3.5 py-2.5 text-[11px] font-semibold text-white transition-colors duration-200 hover:border-[#9f3030] hover:bg-[#9f3030]"
+                    : "rounded-md border border-black/15 bg-transparent px-3.5 py-2.5 text-[11px] font-semibold text-black/72 transition-colors duration-200 hover:border-black/35 hover:text-black";
 
                   return action.href ? (
                     <a
@@ -129,7 +130,7 @@ export default function FeaturedProjects() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] grid place-items-center bg-[#080b11]/76 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-[200] grid place-items-center bg-black/72 p-4"
             onPointerDown={(event) => {
               if (event.target === event.currentTarget) setActiveDetail(null);
             }}
@@ -141,16 +142,17 @@ export default function FeaturedProjects() {
               initial={{ opacity: 0, y: 24, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 16, scale: 0.98 }}
-              className="max-h-[88vh] w-full max-w-3xl overflow-y-auto rounded-lg border border-white/10 bg-[#fff7ea] text-[#11131a] shadow-[0_32px_120px_rgba(0,0,0,0.55)]"
+              transition={{ duration: 0.25 }}
+              className="max-h-[88vh] w-full max-w-3xl overflow-y-auto rounded-[10px] border border-white/12 bg-[var(--paper-soft)] text-[var(--ink)] shadow-[0_24px_80px_rgba(0,0,0,0.4)]"
             >
-              <div className="flex items-start justify-between gap-4 border-b border-black/10 bg-[#11131a] px-5 py-4 text-[#fff7ea] sm:px-7">
+              <div className="flex items-start justify-between gap-4 border-b border-white/10 bg-[#181818] px-5 py-5 text-[var(--paper-soft)] sm:px-7">
                 <div>
-                  <p className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-[#73e0c1]">
+                  <p className="text-[11px] font-semibold text-[#d66b6b]">
                     {detail.eyebrow}
                   </p>
                   <h3
                     id="featured-detail-title"
-                    className="mt-2 text-2xl font-black leading-tight sm:text-3xl"
+                    className="mt-2 text-2xl font-bold leading-tight tracking-[-0.02em] sm:text-3xl"
                   >
                     {detail.title}
                   </h3>
@@ -158,7 +160,7 @@ export default function FeaturedProjects() {
                 <button
                   type="button"
                   onClick={() => setActiveDetail(null)}
-                  className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-white/12 bg-white/[0.06] font-black transition hover:bg-white/[0.12]"
+                  className="grid h-9 w-9 shrink-0 place-items-center rounded-md border border-white/16 bg-transparent text-sm font-semibold transition-colors duration-200 hover:bg-white/[0.08]"
                   aria-label="Close project details"
                 >
                   X
@@ -166,7 +168,7 @@ export default function FeaturedProjects() {
               </div>
 
               <div className="p-5 sm:p-7">
-                <p className="max-w-2xl text-sm leading-7 text-black/65">
+                <p className="max-w-2xl text-sm leading-7 text-[var(--muted)]">
                   {detail.intro}
                 </p>
                 <div className="mt-6 divide-y divide-black/10 border-y border-black/10">
@@ -175,8 +177,8 @@ export default function FeaturedProjects() {
                       key={section.title}
                       className="grid gap-2 py-5 sm:grid-cols-[150px_1fr] sm:gap-5"
                     >
-                      <h4 className="text-sm font-black">{section.title}</h4>
-                      <p className="text-sm leading-7 text-black/62">
+                      <h4 className="text-sm font-semibold">{section.title}</h4>
+                      <p className="text-sm leading-7 text-[var(--muted)]">
                         {section.body}
                       </p>
                     </div>

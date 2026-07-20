@@ -21,7 +21,7 @@ export default function PageIntro() {
           y: "100%",
           transition: { duration: 0.48, ease: [0.76, 0, 0.24, 1] },
         }}
-        className="absolute inset-x-0 bottom-0 h-1/2 bg-[#0d1528]"
+        className="absolute inset-x-0 bottom-0 h-1/2 bg-[#151515]"
       />
       <motion.div
         initial={{ opacity: 0, y: 16, scale: 0.98 }}
@@ -30,13 +30,13 @@ export default function PageIntro() {
         transition={{ duration: 0.45, ease: "easeOut" }}
         className="relative z-10 text-center"
       >
-        <p className="font-mono text-xs uppercase tracking-[0.32em] text-[#dfd4c4]/54">
+        <p className="font-mono text-xs tracking-[0.12em] text-white/45">
           initializing portfolio
         </p>
-        <h1 className="mt-4 text-5xl font-black tracking-tight text-[#eee5d6] sm:text-7xl">
+        <h1 className="mt-4 text-5xl font-black tracking-tight text-[var(--paper)] sm:text-7xl">
           LAYAN
         </h1>
-        <div className="mx-auto mt-5 h-1 w-56 overflow-hidden rounded-full bg-[#dfd4c4]/14">
+        <div className="mx-auto mt-5 h-0.5 w-56 overflow-hidden bg-white/15">
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: "0%" }}

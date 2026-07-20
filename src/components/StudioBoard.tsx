@@ -39,130 +39,146 @@ export default function StudioBoard() {
   return (
     <section
       id="about"
-      className="relative isolate overflow-hidden bg-[#0b0f17] px-4 py-16 text-[var(--paper-soft)] sm:px-6 lg:px-10"
+      className="scroll-mt-20 bg-[var(--paper)] px-4 py-20 text-[var(--ink)] sm:px-6 lg:px-10 lg:py-28"
     >
-      <div className="absolute inset-0 -z-10 bg-[#0b0f17]" />
-      <div className="absolute left-0 top-0 -z-10 h-32 w-full bg-[#101827]" />
-      <div className="absolute inset-x-0 top-0 h-px bg-white/12" />
-
       <div className="mx-auto max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
-          className="mb-8"
+          transition={{ duration: 0.4 }}
+          className="mb-10 border-b border-black/12 pb-7"
         >
-          <p className="text-xs font-black uppercase tracking-[0.28em] text-[var(--red)]">
-            How I Work
-          </p>
+          <p className="text-xs font-semibold text-[var(--red)]">How I Work</p>
+          <h2 className="mt-3 text-4xl font-bold leading-none tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+            Operations, with personality.
+          </h2>
         </motion.div>
 
-        <motion.article
-          whileHover={{ y: -4 }}
-          className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#fff8ee] p-5 text-[var(--ink)] shadow-[0_30px_100px_rgba(0,0,0,0.28)] sm:p-7"
-        >
-          <div className="absolute right-[-6rem] top-[-6rem] h-72 w-72 rounded-full bg-[var(--red)]/16 blur-3xl" />
-          <div className="relative grid gap-7 md:grid-cols-[0.72fr_1fr] md:items-center">
-            <div>
-              <p className="font-mono text-[10px] font-black uppercase tracking-[0.22em] text-[var(--red)]">
-                practical operations
-              </p>
-              <h3 className="mt-3 max-w-lg text-4xl font-black leading-tight">
-                Practical systems work, with a rollback path.
-              </h3>
-              <p className="mt-3 max-w-md text-sm leading-7 text-[var(--muted)]">
-                I am a cybersecurity graduate focused on junior DevOps,
-                application support, and IT operations. My work spans Linux,
-                CI/CD, containers, application servers, databases, APIs,
-                security testing, and structured troubleshooting.
-              </p>
-              <p className="mt-3 max-w-md text-sm font-bold leading-7 text-[var(--muted)]">
-                {machineLine}
-              </p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <button
-                  type="button"
-                  onClick={feed}
-                  className="rounded-xl bg-[var(--red)] px-5 py-3 text-xs font-black uppercase tracking-[0.14em] text-white transition hover:-translate-y-0.5 hover:bg-[#c9373d] focus:outline-none focus:ring-2 focus:ring-[var(--red)]/30"
+        <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-0">
+          <motion.article
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4 }}
+            className="lg:border-r lg:border-black/12 lg:pr-12"
+          >
+            <p className="font-mono text-[11px] font-semibold text-[var(--red)]">
+              practical operations
+            </p>
+            <h3 className="mt-5 max-w-lg text-4xl font-bold leading-[1.08] tracking-[-0.035em]">
+              Practical systems work, with a rollback path.
+            </h3>
+            <p className="mt-6 max-w-lg text-base leading-8 text-[var(--muted)]">
+              I am a cybersecurity graduate focused on junior DevOps,
+              application support, and IT operations. My work spans Linux,
+              CI/CD, containers, application servers, databases, APIs,
+              security testing, and structured troubleshooting.
+            </p>
+            <p className="mt-5 max-w-lg border-l-2 border-[var(--red)] pl-4 text-sm font-semibold leading-7 text-black/68">
+              {machineLine}
+            </p>
+          </motion.article>
+
+          <motion.article
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.4, delay: 0.04 }}
+            className="rounded-[12px] border border-black/12 bg-[#ebe7de] p-5 sm:p-7 lg:ml-12"
+          >
+            <div className="flex flex-wrap items-end justify-between gap-4 border-b border-black/12 pb-5">
+              <div>
+                <p className="text-xs font-semibold text-[var(--red)]">
+                  Personal easter egg
+                </p>
+                <h3 className="mt-2 text-2xl font-bold tracking-[-0.025em]">
+                  Red Bull build machine
+                </h3>
+              </div>
+              <div className="font-mono text-sm font-semibold text-black/62">
+                {cans}/500
+              </div>
+            </div>
+
+            <div className="mt-5 flex items-center justify-between gap-4">
+              <span className="font-mono text-[10px] font-semibold text-black/42">
+                chamber
+              </span>
+              <span className="text-xs font-semibold text-[var(--red)]">
+                {filled}/10
+              </span>
+            </div>
+
+            <div className="mt-3 grid grid-cols-5 gap-2">
+              {Array.from({ length: 10 }, (_, index) => (
+                <motion.div
+                  key={index}
+                  animate={{
+                    opacity: index < filled ? 1 : 0.18,
+                    y: index === filled - 1 ? [0, -5, 0] : 0,
+                    rotate: index === filled - 1 ? [0, -2, 2, 0] : 0,
+                  }}
+                  transition={{ duration: 0.35 }}
+                  className="grid h-20 place-items-center rounded-md border border-black/10 bg-[var(--paper-soft)]"
                 >
-                  {complete ? "reset machine" : "insert +50"}
-                </button>
-                <div className="rounded-xl border border-[var(--line)] bg-white/70 px-4 py-3 font-mono text-xs font-black text-[var(--ink)]">
-                  {cans}/500
-                </div>
-              </div>
+                  <img
+                    src={redbullCan}
+                    alt=""
+                    className="h-14 w-9 object-contain"
+                  />
+                </motion.div>
+              ))}
             </div>
 
-            <div className="rounded-[1.5rem] border border-[var(--line)] bg-white/72 p-4">
-              <div className="mb-3 flex items-center justify-between">
-                <span className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-[var(--muted-soft)]">
-                  chamber
-                </span>
-                <span className="text-xs font-black text-[var(--red)]">
-                  {filled}/10
-                </span>
-              </div>
+            <motion.div
+              key={fortuneIndex}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.24 }}
+              className="mt-4 rounded-md border border-white/10 bg-[#181818] p-4 text-[var(--paper-soft)]"
+            >
+              <p className="font-mono text-[10px] text-white/38">receipt</p>
+              <p className="mt-2 text-sm font-semibold leading-6 text-white/76">
+                {fortunes[fortuneIndex]}
+              </p>
+            </motion.div>
 
-              <div className="grid grid-cols-5 gap-2">
-                {Array.from({ length: 10 }, (_, index) => (
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              {upgrades.map((upgrade) => {
+                const unlocked = cans >= upgrade.cost;
+
+                return (
                   <motion.div
-                    key={index}
-                    animate={{
-                      opacity: index < filled ? 1 : 0.15,
-                      y: index === filled - 1 ? [0, -6, 0] : 0,
-                      rotate: index === filled - 1 ? [0, -2, 2, 0] : 0,
-                    }}
-                    transition={{ duration: 0.45 }}
-                    className="grid h-20 place-items-center rounded-2xl border border-black/10 bg-[#f0e8dc]"
+                    key={upgrade.name}
+                    animate={{ opacity: unlocked ? 1 : 0.38 }}
+                    transition={{ duration: 0.22 }}
+                    className={`rounded-md border px-3 py-2 text-xs font-semibold ${
+                      unlocked
+                        ? "border-[var(--red)] bg-[var(--red)] text-white"
+                        : "border-black/10 bg-[var(--paper-soft)] text-black/45"
+                    }`}
                   >
-                    <img
-                      src={redbullCan}
-                      alt=""
-                      className="h-14 w-9 object-contain"
-                    />
+                    {upgrade.name}
                   </motion.div>
-                ))}
-              </div>
-
-              <motion.div
-                key={fortuneIndex}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-4 rounded-2xl border border-black/10 bg-[#11131a] p-4 text-[#fff8ee]"
-              >
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/36">
-                  receipt
-                </p>
-                <p className="mt-2 text-sm font-bold leading-6 text-white/76">
-                  {fortunes[fortuneIndex]}
-                </p>
-              </motion.div>
-
-              <div className="mt-3 grid grid-cols-2 gap-2">
-                {upgrades.map((upgrade) => {
-                  const unlocked = cans >= upgrade.cost;
-
-                  return (
-                    <motion.div
-                      key={upgrade.name}
-                      animate={{
-                        opacity: unlocked ? 1 : 0.38,
-                        scale: unlocked ? 1 : 0.98,
-                      }}
-                      className={`rounded-xl border px-3 py-2 text-xs font-black ${
-                        unlocked
-                          ? "border-[var(--red)] bg-[var(--red)] text-white"
-                          : "border-black/10 bg-white/60 text-[var(--muted-soft)]"
-                      }`}
-                    >
-                      {upgrade.name}
-                    </motion.div>
-                  );
-                })}
-              </div>
+                );
+              })}
             </div>
-          </div>
-        </motion.article>
+
+            <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-black/12 pt-5">
+              <button
+                type="button"
+                onClick={feed}
+                className="rounded-md bg-[var(--red)] px-5 py-3 text-xs font-semibold text-white transition-colors duration-200 hover:bg-[#9f3030]"
+              >
+                {complete ? "reset machine" : "insert +50"}
+              </button>
+              <p className="text-xs leading-5 text-black/45">
+                Fuel the workflow. Unlock the upgrades.
+              </p>
+            </div>
+          </motion.article>
+        </div>
       </div>
     </section>
   );

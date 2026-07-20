@@ -109,38 +109,38 @@ export default function PortfolioRouteGame() {
   return (
     <section
       id="route-game"
-      className="relative overflow-hidden bg-[#0f111a] px-4 py-16 text-[#fff7ea] sm:px-6 lg:px-10"
+      className="relative scroll-mt-20 overflow-hidden bg-[#181818] px-4 py-20 text-[var(--paper-soft)] sm:px-6 lg:px-10 lg:py-28"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-4 flex flex-col gap-4 rounded-lg border border-white/10 bg-[#fff7ea] p-4 text-[#11131a] shadow-[0_18px_60px_rgba(0,0,0,0.2)] sm:flex-row sm:items-center sm:justify-between sm:p-5">
-          <p className="text-sm font-black sm:text-base">
+        <div className="mb-8 flex flex-col gap-4 border-y border-white/12 py-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm font-semibold text-white/72 sm:text-base">
             Not here to play? View my projects directly.
           </p>
           <div className="flex flex-wrap gap-2">
             <a
               href="#projects"
-              className="rounded-md bg-[#e2484d] px-4 py-2.5 text-[10px] font-black uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:bg-[#c9373d] focus:outline-none focus:ring-2 focus:ring-[#e2484d]/35"
+              className="rounded-md bg-[var(--red)] px-4 py-2.5 text-[11px] font-semibold text-white transition-colors duration-200 hover:bg-[#9f3030]"
             >
               View Projects
             </a>
             <a
               href="#technical-focus"
-              className="rounded-md border border-black/15 bg-white/60 px-4 py-2.5 text-[10px] font-black uppercase tracking-[0.12em] transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-black/15"
+              className="rounded-md border border-white/16 px-4 py-2.5 text-[11px] font-semibold text-white/75 transition-colors duration-200 hover:border-white/35 hover:text-white"
             >
               View Skills Matrix
             </a>
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#151827] p-3 shadow-[0_34px_130px_rgba(0,0,0,0.42)]">
-          <div className="mb-3 rounded-[1.45rem] border border-white/10 bg-[#11131d]/90 px-5 py-4 sm:px-6">
+        <div className="relative overflow-hidden rounded-[12px] border border-white/12 bg-[#111111] p-2.5 shadow-[0_18px_50px_rgba(0,0,0,0.2)] sm:p-3">
+          <div className="mb-3 border-b border-white/10 px-3 py-5 sm:px-5 sm:py-6">
             <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.28em] text-[#ff6b8a]">
+                <p className="text-xs font-semibold text-[#d66b6b]">
                   Play My Route
                 </p>
 
-                <h2 className="mt-2 text-3xl font-black leading-none sm:text-5xl">
+                <h2 className="mt-2 text-3xl font-bold leading-none tracking-[-0.03em] sm:text-5xl">
                   Jump through my work.
                 </h2>
               </div>
@@ -154,17 +154,17 @@ export default function PortfolioRouteGame() {
 
           {!hasStarted && <GameIntroOverlay onStartGame={handleStartGame} />}
 
-          <div className="relative rounded-[1.55rem] border border-white/10 bg-[#0b0f18] p-2">
-            <div className="absolute left-5 right-5 top-5 z-20 h-3 overflow-hidden rounded-full border border-white/10 bg-[#0f111a]/80">
+          <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0b0f18] p-1.5 sm:p-2">
+            <div className="absolute left-5 right-5 top-5 z-20 h-2 overflow-hidden rounded-sm border border-white/10 bg-[#0f111a]/80">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-[#ff6b8a] via-[#73e0c1] to-[#fff2dd] transition-[width] duration-200"
+                className="h-full bg-[var(--red)] transition-[width] duration-200"
                 style={{ width: `${Math.round(progress * 100)}%` }}
               />
             </div>
 
             <div
               ref={gameRef}
-              className="h-[min(72vh,640px)] w-full overflow-hidden rounded-[1.25rem] bg-[#83c9ff]"
+              className="h-[min(72vh,640px)] w-full overflow-hidden rounded-md bg-[#83c9ff]"
             />
           </div>
 
@@ -183,6 +183,7 @@ export default function PortfolioRouteGame() {
               onPointerDown={() => pressControl("left")}
               onPointerUp={() => releaseControl("left")}
               onPointerLeave={() => releaseControl("left")}
+              aria-label="Move left"
               className="pointer-events-auto grid h-12 w-12 place-items-center rounded-2xl border border-white/15 bg-[#0f111a]/88 text-xl font-black shadow-xl"
             >
               ←
@@ -193,6 +194,7 @@ export default function PortfolioRouteGame() {
               onPointerDown={() => pressControl("right")}
               onPointerUp={() => releaseControl("right")}
               onPointerLeave={() => releaseControl("right")}
+              aria-label="Move right"
               className="pointer-events-auto grid h-12 w-12 place-items-center rounded-2xl border border-white/15 bg-[#0f111a]/88 text-xl font-black shadow-xl"
             >
               →

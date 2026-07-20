@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
+import {
+  AnimatePresence,
+  MotionConfig,
+  motion,
+  useScroll,
+  useSpring,
+} from "framer-motion";
 import KineticDivider from "./components/KineticDivider";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -21,26 +27,28 @@ function App() {
   }, []);
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[var(--paper)] text-[var(--ink)]">
-      <AnimatePresence>{introVisible ? <PageIntro /> : null}</AnimatePresence>
+    <MotionConfig reducedMotion="user">
+      <main className="min-h-screen overflow-x-hidden bg-[var(--paper)] text-[var(--ink)]">
+        <AnimatePresence>{introVisible ? <PageIntro /> : null}</AnimatePresence>
 
-      <motion.div
-        aria-hidden="true"
-        className="fixed left-0 right-0 top-0 z-[120] h-1 origin-left bg-[var(--red)]"
-        style={{ scaleX }}
-      />
+        <motion.div
+          aria-hidden="true"
+          className="fixed left-0 right-0 top-0 z-[120] h-0.5 origin-left bg-[var(--red)]"
+          style={{ scaleX }}
+        />
 
-      <Navbar />
-      <Hero />
-      <KineticDivider />
+        <Navbar />
+        <Hero />
+        <KineticDivider />
 
-      <FeaturedProjects />
-      <TechnicalFocus />
-      <PortfolioRouteGame />
+        <FeaturedProjects />
+        <TechnicalFocus />
+        <PortfolioRouteGame />
 
-      <StudioBoard />
-      <ContactPanel />
-    </main>
+        <StudioBoard />
+        <ContactPanel />
+      </main>
+    </MotionConfig>
   );
 }
 

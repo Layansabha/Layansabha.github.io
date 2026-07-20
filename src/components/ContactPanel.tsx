@@ -26,97 +26,80 @@ export default function ContactPanel() {
   return (
     <section
       id="contact"
-      className="relative isolate overflow-hidden bg-[var(--paper)] px-4 pb-14 pt-6 sm:px-6 lg:px-10"
+      className="scroll-mt-20 border-t border-white/10 bg-[#151515] px-4 py-20 text-[var(--paper-soft)] sm:px-6 lg:px-10 lg:py-28"
     >
-      <div className="mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.55 }}
-          className="relative overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--navy)] py-4 px-4 text-[var(--paper-soft)] shadow-[0_30px_90px_rgba(17,19,26,0.18)] md:py-5 md:px-6"
-        >
-          <div className="absolute right-0 top-0 h-64 w-64 translate-x-20 -translate-y-24 rounded-full bg-[var(--blue)]/18 blur-3xl" />
+      <motion.div
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.42 }}
+        className="mx-auto max-w-7xl"
+      >
+        <div className="grid gap-12 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
+          <div>
+            <p className="text-xs font-semibold text-[#d66b6b]">Contact</p>
+            <h2 className="mt-4 max-w-4xl text-5xl font-bold leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
+              Let&apos;s build and support reliable systems.
+            </h2>
 
-          <div className="relative grid gap-6 lg:grid-cols-[1fr_0.66fr] lg:items-end">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.28em] text-white/42">
-                Contact
-              </p>
-              <h2 className="mt-2 max-w-3xl text-3xl font-black leading-tight sm:text-5xl">
-                Let&apos;s build and support reliable systems.
-              </h2>
-              <div className="mt-4 flex flex-wrap gap-3">
-                {channels.map((channel) => (
-                  <span
-                    key={channel}
-                    className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-bold text-white/70"
-                  >
-                    {channel}
-                  </span>
-                ))}
-              </div>
+            <div className="mt-7 flex flex-wrap gap-x-3 gap-y-2 text-sm text-white/46">
+              {channels.map((channel, index) => (
+                <span key={channel} className="flex items-center gap-3">
+                  {index > 0 ? <span className="text-[var(--red)]">/</span> : null}
+                  {channel}
+                </span>
+              ))}
             </div>
 
-            <div
-              id="contact-info"
-              className="scroll-mt-28 rounded-[1.25rem] border border-white/10 bg-white/[0.04] p-5"
-            >
-              <div className="flex items-end gap-4">
-                <motion.img
-                  src={redbullCan}
-                  alt="Red Bull can"
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="h-24 w-12 object-contain"
-                />
-                <div>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/42">
-                    status
-                  </p>
-                  <p className="mt-2 text-2xl font-black">
-                    Open to junior DevOps, application support, and IT operations roles.
-                  </p>
-                </div>
+            <div className="mt-10 flex items-end gap-5 border-t border-white/12 pt-6">
+              <img
+                src={redbullCan}
+                alt="Red Bull can"
+                className="h-20 w-10 object-contain"
+              />
+              <div>
+                <p className="font-mono text-[10px] text-white/34">status</p>
+                <p className="mt-2 max-w-md text-lg font-semibold leading-7 text-white/82">
+                  Open to junior DevOps, application support, and IT operations roles.
+                </p>
               </div>
-              <div className="mt-4 grid gap-2">
-                {contacts.map((contact) => (
-                  <a
-                    key={contact.label}
-                    href={contact.href}
-                    target={
-                      contact.href.startsWith("http") ? "_blank" : undefined
-                    }
-                    rel={
-                      contact.href.startsWith("http") ? "noreferrer" : undefined
-                    }
-                    className="rounded-xl border border-white/10 bg-[var(--paper-soft)] px-4 py-3 text-[var(--navy)] transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/30"
-                  >
-                    <span className="block font-mono text-[10px] font-black uppercase tracking-[0.18em] text-[var(--muted-soft)]">
-                      {contact.label}
-                    </span>
-                    <span className="mt-1 block text-sm font-black">
-                      {contact.value}
-                    </span>
-                  </a>
-                ))}
-              </div>
-              <a
-                href={publicAsset("Layan-Sabha-CV.pdf")}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex items-center justify-center rounded-xl border border-white/10 bg-[var(--red)] px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:bg-[#c9373d]"
-              >
-                Download CV
-              </a>
             </div>
           </div>
-        </motion.div>
-      </div>
+
+          <div id="contact-info" className="scroll-mt-28 lg:border-l lg:border-white/12 lg:pl-10">
+            <div className="border-t border-white/14">
+              {contacts.map((contact) => (
+                <a
+                  key={contact.label}
+                  href={contact.href}
+                  target={contact.href.startsWith("http") ? "_blank" : undefined}
+                  rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
+                  className="group grid gap-2 border-b border-white/14 py-5 sm:grid-cols-[92px_1fr_auto] sm:items-center"
+                >
+                  <span className="font-mono text-[10px] text-white/34">
+                    {contact.label}
+                  </span>
+                  <span className="break-all text-sm font-semibold text-white/82 transition-colors duration-200 group-hover:text-white">
+                    {contact.value}
+                  </span>
+                  <span className="hidden text-[var(--red)] transition-transform duration-200 group-hover:translate-x-1 sm:block">
+                    →
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            <a
+              href={publicAsset("Layan-Sabha-CV.pdf")}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-7 inline-flex items-center justify-center rounded-md bg-[var(--red)] px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#9f3030]"
+            >
+              Download CV
+            </a>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }

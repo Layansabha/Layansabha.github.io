@@ -29,152 +29,144 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate min-h-screen overflow-hidden bg-[#0b0f17] px-4 pb-8 pt-24 text-[var(--paper-soft)] sm:px-6 lg:px-10"
+      className="relative isolate overflow-hidden bg-[#151515] px-4 pb-12 pt-28 text-[var(--paper-soft)] sm:px-6 sm:pt-32 lg:px-10 lg:pb-16"
     >
-      <div className="absolute inset-0 -z-10 bg-[#0b0f17]" />
-      <div className="absolute inset-x-6 top-24 -z-10 h-px bg-white/10" />
-      <div className="absolute bottom-10 right-10 -z-10 hidden h-64 w-64 rounded-[3rem] border border-white/8 bg-[#101827] lg:block" />
-
-      <div className="mx-auto grid min-h-[calc(100vh-8rem)] max-w-[1500px] items-center gap-5 lg:grid-cols-[0.82fr_1.18fr]">
+      <div className="mx-auto grid min-h-[760px] max-w-[1380px] gap-x-12 gap-y-10 lg:grid-cols-[1.08fr_0.72fr] lg:items-center">
         <motion.div
-          initial={{ opacity: 0, y: 22 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.055] p-5 shadow-[0_30px_110px_rgba(0,0,0,0.32)] backdrop-blur-xl sm:p-7"
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="pt-4 lg:pt-0"
         >
-          <div className="mb-7 flex items-center justify-between gap-4">
-            <div className="flex gap-2">
-              <span className="h-3 w-3 rounded-full bg-[var(--red)]" />
-              <span className="h-3 w-3 rounded-full bg-[var(--gold)]" />
-              <span className="h-3 w-3 rounded-full bg-[var(--blue)]" />
-            </div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/40">
-              layan.exe
-            </p>
+          <div className="mb-8 flex items-center gap-3 text-xs text-white/42">
+            <span className="h-px w-8 bg-[var(--red)]" />
+            <span>Junior DevOps · Application Support · IT Operations</span>
           </div>
 
-          <p className="text-xs font-black uppercase tracking-[0.32em] text-[var(--red)]">
-            Junior DevOps / Application Support / IT Operations
-          </p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-black leading-[1.02] tracking-normal text-[#fff8ee] sm:text-5xl lg:text-6xl">
+          <h1 className="max-w-4xl text-[clamp(2.9rem,6.3vw,6.5rem)] font-bold leading-[0.97] tracking-[-0.055em] text-[var(--paper-soft)]">
             Layan builds, deploys, and troubleshoots reliable systems.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-8 text-white/66">
-            Cybersecurity graduate with hands-on experience in CI/CD, Linux,
-            containers, application deployment, database operations, security
-            testing, and production support.
-          </p>
 
-          <div className="mt-8 rounded-2xl border border-white/10 bg-[#070a10]/70 p-4 font-mono">
-            <div className="mb-3 flex items-center justify-between">
-              <span className="text-[10px] uppercase tracking-[0.22em] text-white/36">
-                command palette
-              </span>
+          <div className="mt-8 grid gap-6 border-t border-white/12 pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
+            <p className="max-w-2xl text-base leading-8 text-white/62 sm:text-lg">
+              Cybersecurity graduate with hands-on experience in CI/CD, Linux,
+              containers, application deployment, database operations, security
+              testing, and production support.
+            </p>
+
+            <div className="flex flex-wrap gap-2.5">
+              <a
+                href={publicAsset("Layan-Sabha-CV.pdf")}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-md bg-[var(--red)] px-4 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#9f3030]"
+              >
+                Download CV
+              </a>
+              <a
+                href="#contact"
+                className="rounded-md border border-white/18 px-4 py-3 text-sm font-semibold text-white/82 transition-colors duration-200 hover:border-white/40 hover:text-white"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-7 border border-white/12 bg-[#111111] font-mono">
+            <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5">
+              <div className="flex items-center gap-3">
+                <span className="h-1.5 w-1.5 rounded-full bg-white/35" />
+                <span className="text-[10px] text-white/38">command palette</span>
+              </div>
               <button
                 type="button"
                 onClick={() =>
                   setCommandIndex((index) => (index + 1) % commands.length)
                 }
-                className="rounded-full border border-white/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-white/60 transition hover:text-white"
+                className="rounded px-2 py-1 text-[10px] font-semibold text-white/48 transition-colors duration-200 hover:bg-white/[0.06] hover:text-white"
               >
                 reroll
               </button>
             </div>
             <motion.p
               key={command}
-              initial={{ opacity: 0, x: -8 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-sm text-[#fff8ee]"
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.22 }}
+              className="px-4 py-4 text-sm text-white/76"
             >
-              <span className="text-[var(--blue)]">~/portfolio</span> ${" "}
+              <span className="text-[var(--red)]">~/portfolio</span> ${" "}
               {command}
             </motion.p>
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href={publicAsset("Layan-Sabha-CV.pdf")}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-2xl border border-white/10 bg-[var(--red)] px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:bg-[#c9373d]"
-            >
-              Download CV
-            </a>
-            <a
-              href="#contact"
-              className="rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-white/85 transition hover:bg-white/[0.12]"
-            >
-              Contact
-            </a>
-          </div>
-
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            {panels.map(([title, text]) => (
-              <a
-                key={title}
-                href={
-                  title === "DevOps"
-                    ? "#technical-focus"
-                    : title === "Application Support"
-                      ? "#about"
-                      : "#route-game"
-                }
-                className="rounded-2xl border border-white/10 bg-white/[0.045] p-4 transition hover:-translate-y-1 hover:bg-white/[0.08]"
-              >
-                <p className="text-lg font-black">{title}</p>
-                <p className="mt-2 text-xs leading-5 text-white/52">{text}</p>
-              </a>
-            ))}
           </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 26 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.72, delay: 0.08, ease: "easeOut" }}
-          className="grid gap-5"
+          transition={{ duration: 0.48, delay: 0.06, ease: "easeOut" }}
+          className="mx-auto w-full max-w-[560px] lg:max-w-none"
         >
-          <div className="relative mx-auto w-full max-w-[720px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-3 shadow-[0_34px_110px_rgba(0,0,0,0.36)] backdrop-blur">
-            <div className="relative aspect-[0.96/1] overflow-hidden rounded-[1.5rem]">
+          <div className="border border-white/14 bg-[#111111] p-2.5">
+            <div className="relative aspect-[4/5] overflow-hidden bg-[#202020]">
               <img
                 src={publicAsset("assets/layan-photo.jpg")}
                 alt="Portrait of Layan"
                 className="h-full w-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-[#0b0f17]/18" />
-
-              <motion.div
-                animate={{ y: ["-8%", "108%"] }}
-                transition={{ duration: 3.4, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-x-0 top-0 h-20 bg-white/10"
-              />
-
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <div className="flex items-end justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-black uppercase tracking-[0.26em] text-white/54">
-                      operator
-                    </p>
-                    <h2 className="mt-1 text-4xl font-black text-[#fff8ee]">
-                      Layan
-                    </h2>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setMood((value) => (value === "calm" ? "deploy" : "calm"))
-                    }
-                    className="rounded-2xl border border-white/12 bg-[#0b0f17]/70 px-4 py-3 text-right backdrop-blur transition hover:bg-[#0b0f17]"
-                  >
-                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/38">
-                      mode
-                    </p>
-                    <p className="text-sm font-black text-[#fff8ee]">{mood}</p>
-                  </button>
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 border-t border-white/12 bg-[#151515]/92 p-4">
+                <div>
+                  <p className="font-mono text-[10px] text-white/42">operator</p>
+                  <h2 className="mt-1 text-2xl font-bold text-white">Layan</h2>
                 </div>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setMood((value) => (value === "calm" ? "deploy" : "calm"))
+                  }
+                  className="rounded-md border border-white/16 px-3 py-2 text-left transition-colors duration-200 hover:border-white/35"
+                >
+                  <span className="block font-mono text-[9px] text-white/38">mode</span>
+                  <span className="mt-0.5 block text-xs font-semibold text-white">
+                    {mood}
+                  </span>
+                </button>
               </div>
             </div>
           </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.42, delay: 0.1 }}
+          className="grid border-y border-white/14 sm:grid-cols-3 lg:col-span-2"
+        >
+          {panels.map(([title, text], index) => (
+            <a
+              key={title}
+              href={
+                title === "DevOps"
+                  ? "#technical-focus"
+                  : title === "Application Support"
+                    ? "#about"
+                    : "#route-game"
+              }
+              className={`group py-5 transition-colors duration-200 hover:bg-white/[0.035] sm:px-5 ${
+                index < panels.length - 1
+                  ? "border-b border-white/14 sm:border-b-0 sm:border-r"
+                  : ""
+              }`}
+            >
+              <div className="flex items-baseline justify-between gap-4">
+                <p className="text-lg font-semibold text-white">{title}</p>
+                <span className="text-sm text-[var(--red)] transition-transform duration-200 group-hover:translate-x-1">
+                  →
+                </span>
+              </div>
+              <p className="mt-2 max-w-sm text-sm leading-6 text-white/48">{text}</p>
+            </a>
+          ))}
         </motion.div>
       </div>
     </section>

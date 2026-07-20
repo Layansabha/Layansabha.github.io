@@ -4,7 +4,6 @@ const focusAreas = [
   {
     number: "01",
     title: "DevOps & Containers",
-    accent: "text-[#e2484d]",
     skills: [
       "Linux / Ubuntu / Oracle Linux",
       "Jenkins CI/CD",
@@ -17,7 +16,6 @@ const focusAreas = [
   {
     number: "02",
     title: "Application & IT Operations",
-    accent: "text-[#2457e6]",
     skills: [
       "Application deployment & support",
       "Apache Tomcat & JDK 8/11",
@@ -30,7 +28,6 @@ const focusAreas = [
   {
     number: "03",
     title: "Security & Networking",
-    accent: "text-[#17765d]",
     skills: [
       "Trivy & SonarQube",
       "Vulnerability assessment & CVSS",
@@ -46,47 +43,49 @@ export default function TechnicalFocus() {
   return (
     <section
       id="technical-focus"
-      className="scroll-mt-24 bg-[#dfe8f2] px-4 py-14 text-[#11131a] sm:px-6 lg:px-10"
+      className="scroll-mt-20 border-y border-black/10 bg-[#ebe7de] px-4 py-20 text-[var(--ink)] sm:px-6 lg:px-10 lg:py-28"
     >
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          className="mb-8 grid gap-4 lg:grid-cols-[1fr_0.72fr] lg:items-end"
+          transition={{ duration: 0.4 }}
+          className="mb-10 grid gap-4 border-b border-black/12 pb-7 lg:grid-cols-[1fr_0.72fr] lg:items-end"
         >
           <div>
-            <h2 className="mt-3 text-4xl font-black leading-none sm:text-5xl">
+            <p className="text-xs font-semibold text-[var(--red)]">
+              Capabilities
+            </p>
+            <h2 className="mt-3 text-4xl font-bold leading-none tracking-[-0.035em] sm:text-5xl lg:text-6xl">
               Technical Focus
             </h2>
           </div>
         </motion.div>
 
-        <div className="grid border-y border-black/12 md:grid-cols-3">
+        <div className="grid md:grid-cols-3">
           {focusAreas.map((area, index) => (
             <motion.article
               key={area.title}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
-              transition={{ delay: index * 0.07 }}
-              className={`py-7 md:px-7 ${index < focusAreas.length - 1 ? "border-b border-black/12 md:border-b-0 md:border-r" : ""}`}
+              transition={{ duration: 0.35, delay: index * 0.05 }}
+              className={`py-7 md:px-7 ${index < focusAreas.length - 1 ? "border-b border-black/12 md:border-b-0 md:border-r" : ""} ${index === 0 ? "md:pl-0" : ""}`}
             >
-              <p
-                className={`font-mono text-xs font-black tracking-[0.18em] ${area.accent}`}
-              >
+              <p className="font-mono text-xs font-semibold text-[var(--red)]">
                 {area.number}
               </p>
-              <h3 className="mt-3 text-2xl font-black">{area.title}</h3>
-              <ul className="mt-5 space-y-3">
+              <h3 className="mt-3 min-h-14 text-2xl font-bold leading-tight tracking-[-0.02em]">
+                {area.title}
+              </h3>
+              <ul className="mt-5 border-t border-black/10">
                 {area.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="flex items-center gap-3 text-sm font-bold text-black/68"
+                    className="flex items-center gap-3 border-b border-black/[0.08] py-3 text-sm font-medium text-black/62"
                   >
-                    <span
-                      className={`h-1.5 w-1.5 shrink-0 rounded-full bg-current ${area.accent}`}
-                    />
+                    <span className="h-px w-3 shrink-0 bg-[var(--red)]" />
                     {skill}
                   </li>
                 ))}

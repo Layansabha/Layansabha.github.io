@@ -2,17 +2,17 @@
 
 :root {
   color-scheme: light;
-  --paper: #f1ece4;
-  --paper-soft: #fff8ee;
-  --ink: #11131a;
-  --navy: #0d1119;
-  --blue: #2457e6;
-  --red: #e2484d;
-  --gold: #b78338;
-  --sage: #7e8d7a;
-  --line: rgba(17, 19, 26, 0.14);
-  --muted: rgba(17, 19, 26, 0.66);
-  --muted-soft: rgba(17, 19, 26, 0.44);
+  --paper: #f4f1ea;
+  --paper-soft: #fbf9f4;
+  --ink: #181818;
+  --navy: #151515;
+  --blue: #b63a3a;
+  --red: #b63a3a;
+  --gold: #686868;
+  --sage: #686868;
+  --line: #d5d1c9;
+  --muted: #686868;
+  --muted-soft: #8a8680;
   font-family:
     Inter,
     ui-sans-serif,
@@ -21,7 +21,8 @@
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  background: #0d1119;
+  background: #151515;
+  font-feature-settings: "kern" 1, "liga" 1;
   text-rendering: geometricPrecision;
 }
 
@@ -32,11 +33,21 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #0d1119;
+  background: #151515;
 }
 
 * {
   box-sizing: border-box;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
 }
 
 ::selection {
@@ -50,12 +61,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d1119;
+  background: #151515;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--red);
-  border-radius: 999px;
+  border: 2px solid #151515;
 }
 
 .portal-pulse {
@@ -323,5 +334,18 @@ body {
 
   .route-character {
     width: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track,
+  .portal-pulse,
+  .route-character.is-walking,
+  .route-character.is-idle {
+    animation: none;
   }
 }
