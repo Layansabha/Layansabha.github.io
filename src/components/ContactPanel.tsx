@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import { publicAsset } from "../utils/publicAsset";
 import redbullCan from "../assets/redbull.png";
 
-const channels = ["DevOps", "Security", "Network"];
+const channels = ["DevOps", "Application Support", "IT Operations"];
 const contacts = [
   {
     label: "Email",
-    value: "layansabha@yahoo.com",
-    href: "mailto:layansabha@yahoo.com",
+    value: "layan.h.sabha@gmail.com",
+    href: "mailto:layan.h.sabha@gmail.com",
   },
-  { label: "Phone", value: "+962798691559", href: "tel:+962798691559" },
+  { label: "Phone", value: "+962 79 869 1559", href: "tel:+962798691559" },
   {
     label: "GitHub",
     value: "github.com/Layansabha",
@@ -19,11 +19,6 @@ const contacts = [
     label: "LinkedIn",
     value: "linkedin.com/in/layan-sabha",
     href: "https://www.linkedin.com/in/layan-sabha/",
-  },
-  {
-    label: "Instagram",
-    value: "@layan.9ss",
-    href: "https://www.instagram.com/layan.9ss",
   },
 ];
 
@@ -49,7 +44,7 @@ export default function ContactPanel() {
                 Contact
               </p>
               <h2 className="mt-2 max-w-3xl text-3xl font-black leading-tight sm:text-5xl">
-                Let&apos;s build something secure, useful, and lasting.
+                Let&apos;s build and support reliable systems.
               </h2>
               <div className="mt-4 flex flex-wrap gap-3">
                 {channels.map((channel) => (
@@ -84,7 +79,7 @@ export default function ContactPanel() {
                     status
                   </p>
                   <p className="mt-2 text-2xl font-black">
-                    Available for focused, well-scoped work.
+                    Open to junior DevOps, application support, and IT operations roles.
                   </p>
                 </div>
               </div>

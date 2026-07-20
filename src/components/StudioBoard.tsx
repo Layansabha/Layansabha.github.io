@@ -4,9 +4,9 @@ import redbullCan from "../assets/redbull.png";
 
 const fortunes = [
   "Ship it, and leave a rollback path.",
-  "Least privilege still wins.",
-  "Logs first. Panic later.",
-  "A strong pipeline deserves clear boundaries.",
+  "Logs first. Assumptions later.",
+  "Automate the repeatable. Document the critical.",
+  "A reliable pipeline needs clear boundaries.",
 ];
 
 const upgrades = [
@@ -53,7 +53,7 @@ export default function StudioBoard() {
           className="mb-8"
         >
           <p className="text-xs font-black uppercase tracking-[0.28em] text-[var(--red)]">
-            Interactive Lab
+            How I Work
           </p>
         </motion.div>
 
@@ -65,12 +65,18 @@ export default function StudioBoard() {
           <div className="relative grid gap-7 md:grid-cols-[0.72fr_1fr] md:items-center">
             <div>
               <p className="font-mono text-[10px] font-black uppercase tracking-[0.22em] text-[var(--red)]">
-                energy loop
+                practical operations
               </p>
               <h3 className="mt-3 max-w-lg text-4xl font-black leading-tight">
-                You can pay me 500 cans.
+                Practical systems work, with a rollback path.
               </h3>
               <p className="mt-3 max-w-md text-sm leading-7 text-[var(--muted)]">
+                I am a cybersecurity graduate focused on junior DevOps,
+                application support, and IT operations. My work spans Linux,
+                CI/CD, containers, application servers, databases, APIs,
+                security testing, and structured troubleshooting.
+              </p>
+              <p className="mt-3 max-w-md text-sm font-bold leading-7 text-[var(--muted)]">
                 {machineLine}
               </p>
               <div className="mt-5 flex flex-wrap gap-3">

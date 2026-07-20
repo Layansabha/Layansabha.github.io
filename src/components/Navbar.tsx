@@ -32,7 +32,7 @@ export default function Navbar() {
               LAYAN
             </span>
             <span className="mt-1 block text-[9px] uppercase tracking-[0.32em] text-[#e8d7c5]/52">
-              Security &amp; DevOps
+              DevOps &amp; IT Operations
             </span>
           </span>
         </a>
