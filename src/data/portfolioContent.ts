@@ -2,6 +2,7 @@ export type DetailKey =
   | "amanak-case-study"
   | "amanak-architecture"
   | "trio-methodology"
+  | "monitoring-case-study"
   | "clinical-case-study";
 
 export type ProjectAction = {
@@ -23,6 +24,40 @@ export type FeaturedProject = {
 };
 
 export const projects: FeaturedProject[] = [
+  {
+    title: "Data Center Environmental Monitoring & Observability System",
+    category: "Monitoring & alerting | 2026",
+    description: "An ESP32 sensor system exposes Prometheus metrics, with live and historical Grafana dashboards, Alertmanager mobile notifications, and LCD, RGB LED, and buzzer warnings.",
+    stack: ["ESP32 / Arduino C++", "AHT20 / BMP280", "Prometheus", "Grafana", "Alertmanager", "Docker Compose"],
+    surface: "border-black/10 bg-[#fff7ea] text-[#11131a]",
+    muted: "text-black/55",
+    actions: [{ label: "View Project", detail: "monitoring-case-study", primary: true }],
+  },
+
+  {
+    title: "DOM-XSS Detection & DevSecOps Platform",
+    category: "Security automation & infrastructure | 2024–2026",
+    description:
+      "A Python/FastAPI scanning pipeline with Redis/RQ workers, Chromium collection, AST features, LightGBM triage, and optional OWASP ZAP verification. Achieved 96.19% accuracy and 99.87% precision.",
+    stack: [
+      "FastAPI", "Redis / RQ", "LightGBM", "GitHub Actions",
+      "Trivy / GHCR", "Terraform / Hetzner",
+    ],
+    surface: "border-[#9fb7d3]/35 bg-[#dfe8f2] text-[#11131a]",
+    muted: "text-black/55",
+    actions: [
+      {
+        label: "GitHub",
+        href: "https://github.com/Layansabha/DOM-XSS",
+        primary: true,
+      },
+      {
+        label: "Presentation",
+        href: "https://1drv.ms/p/c/96dce14123ced02e/IQBX9nfeSpMaSLrUsLL3BSQtAUqRZswKKZp3o1fUSYqLJfI?e=b7Vgid",
+      },
+      { label: "Methodology", detail: "trio-methodology" },
+    ],
+  },
   {
     title: "Amanak – Digital Government Platform",
     category: "System integration & application security",
@@ -49,33 +84,6 @@ export const projects: FeaturedProject[] = [
         href: "https://layansabha.github.io/amanak-fullstack/",
       },
       { label: "Architecture", detail: "amanak-architecture" },
-    ],
-  },
-  {
-    title: "TRIO – AI-Based DOM XSS Detection",
-    category: "Web security & machine learning",
-    description:
-      "A functional detection workflow combining structural DOM analysis, six machine-learning models, and script-based validation.",
-    stack: [
-      "Web App Security",
-      "Python",
-      "Machine Learning",
-      "Automation",
-      "DOM XSS",
-    ],
-    surface: "border-[#9fb7d3]/35 bg-[#dfe8f2] text-[#11131a]",
-    muted: "text-black/55",
-    actions: [
-      {
-        label: "GitHub",
-        href: "https://github.com/Layansabha/Dom-xss-ML",
-        primary: true,
-      },
-      {
-        label: "Presentation",
-        href: "https://1drv.ms/p/c/96dce14123ced02e/IQBX9nfeSpMaSLrUsLL3BSQtAUqRZswKKZp3o1fUSYqLJfI?e=b7Vgid",
-      },
-      { label: "Methodology", detail: "trio-methodology" },
     ],
   },
   {
@@ -153,23 +161,23 @@ export const detailContent: Record<
     ],
   },
   "trio-methodology": {
-    eyebrow: "TRIO methodology",
-    title: "Detecting DOM-based XSS through structural signals and validation.",
-    intro:
-      "TRIO accepts a URL, parses the webpage DOM, transforms structural patterns into machine-learning features, and validates suspected findings through a second-stage checking workflow.",
+    eyebrow: "DOM-XSS platform | 2024–2026",
+    title: "From JavaScript collection to a checked, containerized release.",
+    intro: "A Python/FastAPI scanning pipeline combines Chromium-based JavaScript collection, AST feature extraction, LightGBM triage, and optional OWASP ZAP verification. The project achieved 96.19% accuracy and 99.87% precision.",
     sections: [
-      {
-        title: "Prepare",
-        body: "The dataset was cleaned and normalized, then converted through a filtered 500-token vocabulary and numerical vectorization pipeline.",
-      },
-      {
-        title: "Compare",
-        body: "LightGBM, XGBoost, AdaBoost, Decision Tree, Random Forest, and MLP models were trained and evaluated. Random Forest reached up to 96.19% accuracy and 99.87% precision, while MLP produced the strongest recall.",
-      },
-      {
-        title: "Validate",
-        body: "A two-stage workflow combines ML classification with script-based checks to verify suspected findings and reduce false positives.",
-      },
+      { title: "Scanning pipeline", body: "Redis/RQ workers handle scanning tasks, with Chromium collecting JavaScript for AST feature extraction and LightGBM classification. OWASP ZAP provides optional verification." },
+      { title: "CI/CD & security", body: "Nine GitHub Actions checks cover quality, testing, security, and infrastructure. Trivy scans container images before publication to GHCR with SBOM and provenance metadata." },
+      { title: "Infrastructure", body: "Terraform provisions a firewall-protected Hetzner Cloud VPS. Cloud-init automates Docker and Docker Compose installation." },
+    ],
+  },
+  "monitoring-case-study": {
+    eyebrow: "Environmental monitoring | 2026",
+    title: "From physical sensors to dashboards and mobile alerts.",
+    intro: "A portfolio monitoring system connects an ESP32 and AHT20/BMP280 sensors to a containerized observability stack, with local and remote warnings.",
+    sections: [
+      { title: "Device metrics", body: "Arduino C++ firmware reads temperature and humidity data and exposes sensor readings and device health at an HTTP /metrics endpoint in Prometheus format." },
+      { title: "Observability", body: "Docker Compose runs Prometheus, Grafana, and Alertmanager. Live and historical dashboards track the environment; high temperature, abnormal humidity, and device-unavailable alerts are routed to a mobile notification." },
+      { title: "Local warnings", body: "An LCD displays readings while an RGB LED and buzzer provide local status and threshold warnings alongside the remote monitoring flow." },
     ],
   },
   "clinical-case-study": {

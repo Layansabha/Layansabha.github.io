@@ -4,6 +4,7 @@ import logo from "../assets/logoo.png";
 
 const links = [
   { label: "Journey", href: "#route-game" },
+  { label: "Experience", href: "#experience" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#technical-focus" },
   { label: "Projects", href: "#projects" },

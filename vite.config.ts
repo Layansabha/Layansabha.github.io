@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 // Change this value if the GitHub repository is renamed.
-const repositoryName = "proto";
+const repositoryName = "Layansabha.github.io";
 const pagesBase = repositoryName.endsWith(".github.io")
   ? "/"
   : `/${repositoryName}/`;

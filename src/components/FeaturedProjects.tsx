@@ -47,7 +47,7 @@ export default function FeaturedProjects() {
           </div>
         </motion.div>
 
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-2">
           {projects.map((project, index) => (
             <motion.article
               key={project.title}

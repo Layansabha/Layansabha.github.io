@@ -17,7 +17,7 @@ const panels = [
   ],
   [
     "IT Operations",
-    "Linux, NGINX, Apache Tomcat, Oracle 19c, and infrastructure support.",
+    "Windows Server, Active Directory, IIS, Linux, networking, and HTTPS.",
   ],
 ];
 
@@ -40,7 +40,7 @@ export default function Hero() {
         >
           <div className="mb-8 flex items-center gap-3 text-xs text-white/42">
             <span className="h-px w-8 bg-[var(--red)]" />
-            <span>Junior DevOps · Application Support · IT Operations</span>
+            <span>DevOps Engineer · Infrastructure · Observability</span>
           </div>
 
           <h1 className="max-w-4xl text-[clamp(2.9rem,6.3vw,6.5rem)] font-bold leading-[0.97] tracking-[-0.055em] text-[var(--paper-soft)]">
@@ -49,9 +49,9 @@ export default function Hero() {
 
           <div className="mt-8 grid gap-6 border-t border-white/12 pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
             <p className="max-w-2xl text-base leading-8 text-white/62 sm:text-lg">
-              Cybersecurity graduate with hands-on experience in CI/CD, Linux,
-              containers, application deployment, database operations, security
-              testing, and production support.
+              Cybersecurity graduate and Infrastructure Engineer at Azm Digital in
+              Amman. Hands-on experience with Windows Server, networking, CI/CD,
+              Docker, Kubernetes, and monitoring with Prometheus and Grafana.
             </p>
 
             <div className="flex flex-wrap gap-2.5">

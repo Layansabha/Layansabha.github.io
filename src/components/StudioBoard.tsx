@@ -70,10 +70,11 @@ export default function StudioBoard() {
               Practical systems work, with a rollback path.
             </h3>
             <p className="mt-6 max-w-lg text-base leading-8 text-[var(--muted)]">
-              I am a cybersecurity graduate focused on junior DevOps,
-              application support, and IT operations. My work spans Linux,
-              CI/CD, containers, application servers, databases, APIs,
-              security testing, and structured troubleshooting.
+              I am a cybersecurity graduate working as an Infrastructure Engineer
+              at Azm Digital in Amman since July 2026. I configure Windows Server,
+              Active Directory, DNS, DHCP, and IIS, and troubleshoot network
+              connectivity. My projects bring together CI/CD, containers,
+              security checks, infrastructure automation, and observability.
             </p>
             <p className="mt-5 max-w-lg border-l-2 border-[var(--red)] pl-4 text-sm font-semibold leading-7 text-black/68">
               {machineLine}

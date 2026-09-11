@@ -2,40 +2,16 @@ import { motion } from "framer-motion";
 
 const focusAreas = [
   {
-    number: "01",
-    title: "DevOps & Containers",
-    skills: [
-      "Linux / Ubuntu / Oracle Linux",
-      "Jenkins CI/CD",
-      "Docker & Docker Compose",
-      "Kubernetes resources",
-      "Bash & YAML",
-      "Git / GitHub / GitLab",
-    ],
+    number: "01", title: "CI/CD & Containers",
+    skills: ["Jenkins / GitHub Actions / GitLab CI/CD", "Git / GitHub / GitLab / YAML", "Docker / Docker Compose / GHCR", "Kubernetes / Helm", "Python / Bash / SQL", "AWS / Terraform / Ansible (familiarity)"],
   },
   {
-    number: "02",
-    title: "Application & IT Operations",
-    skills: [
-      "Application deployment & support",
-      "Apache Tomcat & JDK 8/11",
-      "NGINX reverse proxy & load balancing",
-      "Oracle Database 19c / CDB / PDB",
-      "REST APIs / Postman / JSON",
-      "Log analysis & root-cause troubleshooting",
-    ],
+    number: "02", title: "Infrastructure & Networking",
+    skills: ["Windows Server / Active Directory / Group Policy", "IIS / TLS certificates / backups", "Linux / Ubuntu / Oracle Linux / NGINX", "DNS / DHCP / TCP/IP / routing", "Firewalls / VPN / TLS/SSL / SSH / NAT", "VMware / VirtualBox / Hyper-V"],
   },
   {
-    number: "03",
-    title: "Security & Networking",
-    skills: [
-      "Trivy & SonarQube",
-      "Vulnerability assessment & CVSS",
-      "Burp Suite / ZAP / Nmap / Nessus",
-      "TCP/IP / DNS / HTTP(S)",
-      "VLANs / OSPF / RIP",
-      "CCNA networking fundamentals",
-    ],
+    number: "03", title: "Observability & Security",
+    skills: ["Prometheus / Grafana / Alertmanager", "Trivy / SonarQube / OWASP ZAP", "Burp Suite / Nmap / Nessus", "SQLMap / Wireshark / CVSS", "ESP32 / Arduino C++ / HTTP metrics", "Vulnerability assessment / remediation reports"],
   },
 ];
 

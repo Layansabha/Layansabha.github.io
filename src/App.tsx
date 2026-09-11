@@ -14,6 +14,7 @@ import ContactPanel from "./components/ContactPanel";
 import StudioBoard from "./components/StudioBoard";
 import PortfolioRouteGame from "./components/PortfolioRouteGame/PortfolioRouteGame";
 import FeaturedProjects from "./components/FeaturedProjects";
+import Experience from "./components/Experience";
 import TechnicalFocus from "./components/TechnicalFocus";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Hero />
         <KineticDivider />
 
+        <Experience />
         <FeaturedProjects />
         <TechnicalFocus />
         <PortfolioRouteGame />

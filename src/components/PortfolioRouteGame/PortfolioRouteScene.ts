@@ -19,7 +19,7 @@ type Controls = {
   e: Phaser.Input.Keyboard.Key;
 };
 
-const WORLD_WIDTH = 6200;
+const WORLD_WIDTH = gameMilestones[gameMilestones.length - 1].x + 700;
 const WORLD_HEIGHT = 540;
 const FLOOR_Y = 430;
 
@@ -384,13 +384,9 @@ export default class PortfolioRouteScene extends Phaser.Scene {
 
     this.createSolidPlatform(0, FLOOR_Y, WORLD_WIDTH, 112, "floor");
 
-    const platforms = [
-      { x: 900, y: 350, w: 340 },
-      { x: 1960, y: 320, w: 370 },
-      { x: 3100, y: 350, w: 380 },
-      { x: 4200, y: 320, w: 420 },
-      { x: 5500, y: 350, w: 430 },
-    ];
+    const platforms = gameMilestones
+      .filter((milestone) => milestone.y < FLOOR_Y)
+      .map((milestone) => ({ x: milestone.x, y: milestone.y, w: 430 }));
 
     platforms.forEach((platform) => {
       this.createSolidPlatform(
@@ -522,7 +518,7 @@ export default class PortfolioRouteScene extends Phaser.Scene {
 
     if (this.textures.exists("flag")) {
       this.add
-        .image(5885, groundY, "flag")
+        .image(WORLD_WIDTH - 315, groundY, "flag")
         .setOrigin(0.5, 1)
         .setScale(0.56)
         .setDepth(34);
