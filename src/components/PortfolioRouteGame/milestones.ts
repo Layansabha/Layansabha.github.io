@@ -9,7 +9,7 @@ export type GameMilestone = {
   number: string;
   title: string;
   shortLabel: string;
-  type: "Education" | "Experience" | "Certification" | "Project" | "Goal";
+  type: "Education" | "Experience" | "Training" | "Certification" | "Project" | "Goal";
   date: string;
   organization: string;
   x: number;
@@ -226,8 +226,8 @@ export const gameMilestones: GameMilestone[] = [
     ],
   },
   {
-    id: 10, number: "10", title: "Infrastructure Engineer", shortLabel: "Azm Digital",
-    type: "Experience", date: "Jul 2026–Present", organization: "Azm Digital | Amman, Jordan",
+    id: 10, number: "10", title: "Infrastructure Engineer Trainee", shortLabel: "Azm Digital",
+    type: "Training", date: "Jul 2026–Present", organization: "Azm Digital | Amman, Jordan",
     x: 5500, y: 350,
     description: "Configured Windows Server, Active Directory, Group Policy, DNS, DHCP, domain joining, file permissions, IIS, backups, and TLS certificates. Troubleshot routing, firewall, DNS, DHCP, and VPN scenarios. Published an HTTPS IIS website through the company router using NAT/port forwarding, and delivered a technical presentation on website certificates and HTTPS trust.",
     skills: ["Windows Server", "Active Directory", "Group Policy", "IIS / HTTPS", "DNS / DHCP", "NAT / VPN"],
@@ -250,7 +250,7 @@ export const gameMilestones: GameMilestone[] = [
     id: 13, number: "13", title: "DevOps Engineering", shortLabel: "Next Step",
     type: "Goal", date: "Present", organization: "Career Direction",
     x: 7300, y: 430,
-    description: "Building on infrastructure work at Azm Digital, DevOps training at Digitinary, and projects in secure delivery and observability. Focused on junior DevOps and infrastructure opportunities.",
+    description: "Building on infrastructure training at Azm Digital, DevOps training at Digitinary, and projects in secure delivery and observability. Focused on junior DevOps and infrastructure opportunities.",
     skills: ["CI/CD", "Containers", "Infrastructure", "Observability", "Security"],
   },
 ];

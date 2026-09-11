@@ -49,9 +49,10 @@ export default function Hero() {
 
           <div className="mt-8 grid gap-6 border-t border-white/12 pt-6 sm:grid-cols-[1fr_auto] sm:items-end">
             <p className="max-w-2xl text-base leading-8 text-white/62 sm:text-lg">
-              Cybersecurity graduate and Infrastructure Engineer at Azm Digital in
-              Amman. Hands-on experience with Windows Server, networking, CI/CD,
-              Docker, Kubernetes, and monitoring with Prometheus and Grafana.
+              Cybersecurity graduate currently training with Azm Digital&apos;s
+              Infrastructure team in Amman. Hands-on experience with Windows Server,
+              networking, CI/CD, Docker, Kubernetes, and monitoring with Prometheus
+              and Grafana.
             </p>
 
             <div className="flex flex-wrap gap-2.5">
